@@ -1,0 +1,19 @@
+/*
+* @Author: WanFeng
+* @Date:   2018-06-09 21:42:23
+* @Last Modified by:   WanFeng
+* @Last Modified time: 2018-06-09 21:51:19
+*/
+.title{
+	width: 100%;
+	height: 30px;
+	background:#e5eecc;
+	float: right;
+}
+.flip{
+	width: 30px;
+	height: 30px;
+	background-image: url("../content/minimize.png");
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
