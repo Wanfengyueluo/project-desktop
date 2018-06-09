@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>UI设计</title>
+		<link rel="stylesheet" href="ui.css">
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	</head>
+	<body style="height: 100%;">
+		<div class="container" style="width: 50%; height: 60%;">
+			<div class="row" style="height: 100%;">
+				<div class="banner col-md-12 col-sm-12 col-xs-12" style="padding: 0px;">
+					<div class="top-line ">
+						<div id="logo">XXXXX<!-- HiChat :) --></div>
+					</div>
+					<span id="status"></span><!-- 在线人数统计 -->
+				</div>
+				<div class="clearfix visible-xs-block col-md-9 col-sm-9 col-xs-9" style=" padding:0px;">
+					<div class="historyMsg col-md-12 col-sm-12 col-xs-12" >
+						
+					</div>
+					<div class="controls col-md-12 col-sm-12 col-xs-12" style="padding: 0px;">
+						<div class="items " >
+							<input id="colorStyle" type="color" placeHolder='#000' title="font color" />
+							<input id="emoji" type="button"  title="emoji" />
+							<label for="sendImage" class="imageLable">
+								<input type="button" value="image"  />
+								<input id="sendImage" type="file" value="image"/>
+							</label>
+							<input id="clearBtn" type="button" value="clear" title="clear screen" />
+						</div>
+						<textarea id="messageInput" placeHolder="enter to send"></textarea>
+						<input id="sendBtn" type="button" value="SEND">
+						<div id="emojiWrapper">
+						</div>
+					</div>
+				</div>
+				<div class="right-grid col-md-3 col-sm-3 col-xs-3" >
+				</div>
+				
+				
+			</div>
+			
+		</div>
+	</body>
+</html>

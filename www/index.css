@@ -1,0 +1,182 @@
+html, body {
+    margin: 0;
+    background-color: #efefef;
+    font-family: sans-serif;
+}
+.wrapper {
+    width: 500px;
+    height: 640px;
+    padding: 5px;
+    margin: 0 auto;
+    background-color: #ddd;
+}
+#loginWrapper {
+    position: fixed;
+    border:2px solid #eee;
+    background-image: url(https://images.unsplash.com/photo-1448518184296-a22facb4446f);
+    background-size: cover;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.75;
+
+}
+#input-style {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50%; 
+    height: 50%;
+    margin:0 auto;
+    margin-top: 10%;
+    border-radius: 5px;
+    max-width: 50em;
+    overflow: hidden;
+    margin: 8em auto 0;
+    box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.5);
+    
+}
+#right {
+    width: 50%;
+    height: 100%;
+    background: #FFFFFFFF;
+    
+}
+#left {
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.77);
+
+}
+.form__field {
+    width: 70%;
+    min-width: 70%;
+    font-size: 1em;
+    padding: 1em;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0.25em;
+    margin-bottom: 1em;
+}
+.form__field:focus {
+    outline: 0;
+    background-color: #fff;
+    border-color: rgba(12, 114, 136, 0.5);
+}
+
+#loginBtn {
+    width: 80%;
+    border: 0;
+    font-size: 1em;
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(5, 127, 148, 0.88);
+    border-radius: 0.25em;
+    padding: 1em;
+}
+#loginBtn:hover,
+#loginBtn:focus {
+    background-color: #c24528;
+}
+
+#info {
+    width: 50%;
+    height: 40px;
+    /*background: #4A4C7DFF;*/
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    /*color: #eee;*/
+}
+#nickWrapper {
+    display: none;
+   
+}
+
+.banner {
+    height: 80px;
+    width: 100%;
+}
+.banner p {
+    float: left;
+    display: inline-block;
+}
+.controls {
+    height: 100px;
+    margin: 5px 0px;
+    position: relative;
+}
+#historyMsg {
+    height: 400px;
+    background-color: #fff;
+    overflow: auto;
+    padding: 2px;
+}
+#historyMsg img {
+    max-width: 99%;
+}
+.timespan {
+    color: #ddd;
+}
+.items {
+    height: 30px;
+}
+#colorStyle {
+    width: 50px;
+    border: none;
+    padding: 0;
+}
+/*custom the file input*/
+
+.imageLable {
+    position: relative;
+}
+#sendImage {
+    position: absolute;
+    width: 52px;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+/*end custom file input*/
+
+#messageInput {
+    width: 440px;
+    max-width: 440px;
+    height: 90px;
+    max-height: 90px;
+}
+#sendBtn {
+    width: 50px;
+    height: 96px;
+    float: right;
+}
+#emojiWrapper {
+    display: none;
+    width: 500px;
+    bottom: 105px;
+    position: absolute;
+    background-color: #aaa;
+    box-shadow: 0 0 10px #555;
+}
+#emojiWrapper img {
+    margin: 2px;
+    padding: 2px;
+    width: 25px;
+    height: 25px;
+}
+#emojiWrapper img:hover {
+    background-color: blue;
+}
+.emoji{
+    display: inline;
+}
+footer {
+    text-align: center;
+}

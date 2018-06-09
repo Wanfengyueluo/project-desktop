@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Wayou">
+        <meta name="description" content="hichat | a simple chat application built with node.js and websocket">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>hichat</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="banner">
+                <h1>HiChat :)</h1>
+                <span id="status"></span>
+            </div>
+            <div id="historyMsg">
+            </div>
+            <div class="controls" >
+                <div class="items">
+                    <input id="colorStyle" type="color" placeHolder='#000' title="font color" />
+                    <input id="emoji" type="button" value="emoji" title="emoji" />
+                    <label for="sendImage" class="imageLable">
+                        <input type="button" value="image"  />
+                        <input id="sendImage" type="file" value="image"/>
+                    </label>
+                    <input id="clearBtn" type="button" value="clear" title="clear screen" />
+                </div>
+                <textarea id="messageInput" placeHolder="enter to send"></textarea>
+                <input id="sendBtn" type="button" value="SEND">
+                <div id="emojiWrapper">
+                </div>
+            </div>
+        </div>
+        <div id="loginWrapper">
+            <div id="input-style" >
+                <div id="right" >
+                    <!-- <h1 id="info">connecting to server...</h1> -->
+                    <h1 >connecting to server...</h1>
+                    <div class="u-auto-format-text">
+                        <p>Sign up now to get great deals on <em>breath-taking</em> outdoor vactions.</p>
+                        <p>Morbi ac felis. Sed a libero. Praesent nec nisl a purus blandit viverra. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros.</p>
+                    </div>
+                </div>
+                <div id="left" >
+                    <!-- <div id="info">connecting to server...</div> -->
+                    <form id="sign-up" class="form form--sign-up">
+                        <label for="email" class="form__label">InPut A NickName</label>
+                        <input name="email" type="email" class="form__field" placeholder="jane@doe.com" id="nicknameInput">
+                        
+                        <input name="submit" type="submit" id="loginBtn" value="Sign Up">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--  <div id="loginWrapper">
+            <p id="info">connecting to server...</p>
+            <div id="nickWrapper">
+                <input type="text" placeHolder="nickname" id="nicknameInput" />
+                <input type="button" value="OK" id="loginBtn" />
+            </div>
+        </div> -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
