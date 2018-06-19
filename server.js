@@ -32,7 +32,6 @@ io.on('connection', function(socket) {
         } else {
             //socket.userIndex = users.length;
             socket.nickname = nickname;
-            owner=true;
             users.push(nickname);
             socket.emit('loginSuccess');
             io.sockets.emit('system', nickname, users.length, 'login');
@@ -54,5 +53,6 @@ io.on('connection', function(socket) {
     socket.on('img', function(imgData, color) {
         socket.broadcast.emit('newImg', socket.nickname, imgData, color);
     });
+    //new file get
 });
 console.log("ok");

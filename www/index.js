@@ -29,7 +29,7 @@ HiChat.prototype = {
      document.getElementById('info').textContent = '!nickname is taken, choose another pls'; //显示昵称被占用的提示
  });
         this.socket.on('loginSuccess', function() {
-     document.title = 'hichat | ' + document.getElementById('nicknameInput').value;
+     document.title = 'HZNU | ' + document.getElementById('nicknameInput').value;
      document.getElementById('loginWrapper').style.display = 'none';//隐藏遮罩层显聊天界面
      document.getElementById('messageInput').focus();//让消息输入框获得焦点
  });
@@ -67,7 +67,7 @@ HiChat.prototype = {
             var s=document.getElementById("ctr-candle");
             str.style.marginLeft='15%';
             str.innerHTML='<img src="../public/'+yourHeadPic+'.png" width=120px;>';
-            s.appendChild(str);
+            s.append(str);
         });
 
         //昵称设置的确定按钮

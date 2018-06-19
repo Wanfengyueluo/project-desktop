@@ -3,25 +3,23 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="author" content="Wayou">
-        <meta name="description" content="hichat | a simple chat application built with node.js and websocket">
+        <meta name="author" content="group 6">
+        <meta name="description" content="hznu | a simple chat application built with node.js and websocket">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>hichat</title>
+        <title>HZNU</title>
         
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="bounceInRight.css">
-        
-        <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
         <script src="script/jquery.js"></script>
         <link rel="stylesheet" href="index.css">
-        <!-- <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+        
         <script src="script/bootstrap.min.js"></script>
         <!-- Bootstrap CSS -->
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+       
         <link  rel="stylesheet" href="styles/bootstrap.min.css">
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> -->
+       
         <link  href="styles/canvas.css">
         <script src="script/colorpalettepicker.js"></script>
         <script type="text/javascript">
@@ -80,8 +78,8 @@
         <div class="container" style="width: 45%; height: 60%;">
             <div class="row" style="height: 100%;">
                 <div class="banner col-md-12 col-sm-12 col-xs-12" style="padding: 0px;">
-                    <div id="logo">XXXXX :)</div>
-                    
+                    <div id="logo">ROOM</div>
+                    <span id="status"></span><!-- 在线人数统计 -->
                 </div>
                 <div class="clearfix  col-md-8 col-sm-8 col-xs-8" style=" padding:0px;">
                     <div class="line col-md-12 col-sm-12 col-xs-12" style="padding: 0px;">
@@ -94,7 +92,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="historyMsg col-md-12 col-sm-12 col-xs-12" id="historyMsg" style="padding: 0px;">
+                    <div class="historyMsg col-md-12 col-sm-12 col-xs-12" id="historyMsg" style="padding: 0px;padding-left: 5px;">
                         
                     </div>
                     <div class="controls col-md-12 col-sm-12 col-xs-12" style="padding: 0px;">
@@ -123,12 +121,18 @@
                         <div id="emojiWrapper"></div>
                     </div>
                 </div>
-                <div class="right-grid col-md-4 col-sm-4 col-xs-4" >
-                    <div id="ctr-candle" style=" margin-top: 10px;">
-                        <!-- <div id="canvasPanel"></div>
-                        <div id="candle"></div> -->
+                <div class="right-grid col-md-4 col-sm-4 col-xs-4" style="padding: 0px;">
+                    <div class="div">
+                        <div id="ctr-candle"></div>
+                        <div class="weather-wrapper">
+                            <div class="body madrid">
+                                <div class="weather-icon sun"></div>
+                                <h1 class="wen"></h1>
+                                <p class="dif"></p>
+                            </div>
+                        </div>
                     </div>
-                    <span id="status"></span><!-- 在线人数统计 -->
+                    
                 </div>
             </div>
         </div>
@@ -172,8 +176,9 @@
                         <input  type="text" class="form__field" placeholder="就喜欢在沙发上睡瞌睡" id="nicknameInput">
                         
                         <input  type="button" id="loginBtn" value="OK">
+                        <div id="info">connecting to server... </div>
                     </form>
-                    <div id="info">connecting to server... </div>
+                    
                 </div>
             </div>
         </div>
@@ -207,17 +212,38 @@
         // 收缩到HOME
         $(document).ready(function(){
         $(".flip").click(function(){
-        $(".container").slideToggle("100");
+        $(".container").slideToggle("slow");
         
         });
         });
 
         $(document).ready(function(){
         $(".home").click(function(){
-        $(".container").slideToggle("10");
+        $(".container").slideToggle("slow");
         
         });
         });
+        // 天气部分
+        $(".div").change(function(){
+        
+        var citykey_val="101210101";
+        $.ajax({
+        url: 'http://wthrcdn.etouch.cn/weather_mini',
+        type: 'get',
+        data: {
+        citykey:citykey_val
+        },
+        dataType: 'json',
+        success: function (resp) {
+        console.log(resp);
+        //$('.body p:first-child span').html(resp.data.city);
+        $('.dif').html(resp.data.city);
+        //$('.body p:nth-child(2) span').html(resp.data.wendu+"℃");
+        $('.wen').html(resp.data.wendu+"º");
+        }
+        })
+        })
+        $('.div').change();
         </script>
     </body>
 </html>

@@ -89,14 +89,15 @@ html, body {
 }
 
 #info {
-    width: 50%;
+    width: 80%;
     height: 40px;
-    /*background: #4A4C7DFF;*/
-    text-align: center;
+    margin:0 auto;
+    margin-top: 20px;
     line-height: 40px;
-    font-size: 18px;
-    font-weight: 700;
-    /*color: #eee;*/
+    font-size: 20px;
+    font-weight: 650;
+    color: #606c88;
+
 }
 
 
@@ -116,16 +117,22 @@ html, body {
 .banner {
     height: 10%;
     border:1.75px solid #bdc3c7;
-    background: linear-gradient(to right, #ffffff , #E0EAFC, #ffffff);
+    background: linear-gradient(to right, #ffffff , #EBF2F6FF, #ffffff);
     border-radius: 5px 05px 0px 0;
+    text-align: center;
 }
 
 #logo {
-    font-size: 25px;
-    /*color: #3C3B3F;*/
+    font-size: 30px;
+    font-weight: 1000;
+    height: 35px;
     color: black;
     font-family: BEYNO, sans-serif;
     text-align: center;
+    padding-bottom: 0px;
+}
+#status {
+    font-size: 13px;
 }
 
 .clearfix {
@@ -140,7 +147,7 @@ html, body {
     border-bottom-color: #bdc3c7;
     border-top: 0;
     border-bottom: 0;
-    background: #eef2f3;
+    background: linear-gradient(to right, #ffffff ,#ffffff,  #EBF2F6FF);
 }
 .historyMsg {
     width: 100%;
@@ -148,11 +155,11 @@ html, body {
     border:1.75px solid #bdc3c7;
     border-bottom-color: #bdc3c7;
     border-top: 0;
-    background: #eef2f3;
+    background: linear-gradient(to right, #ffffff ,#ffffff,  #EBF2F6FF);
     overflow: auto;
 }
 .historyMsg img {
-    max-width: 100%;
+    max-width: 98%;
 }
 
 .mtimespan{
@@ -201,6 +208,27 @@ html, body {
 }
 
 
+#emojiWrapper {
+    display: none;
+    width: 350px;
+    bottom: 142.5px;
+    position: absolute;
+    background-color: #ffffff;
+    border:1.5px solid #bdc3c7;
+    box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px
+}
+#emojiWrapper img {
+    margin: 2px;
+    padding: 2px;
+    width: 27.5px;
+    height: 27.5px;
+    border-radius: 5px
+}
+#emojiWrapper img:hover {
+    background-color: #6190E8;
+}
+
 
 .items {
     width: 100%;
@@ -209,11 +237,12 @@ html, body {
     padding: 0px;
     position: relative;
 }
-#colorpalettediv {
-    /*float: right;*/
-    margin-top: 2.5%;
+#colorStyle {
     margin-left: 2.5%;
-
+    margin-top: 1%;
+    background:transparent;
+    border-radius: 5px;
+    border:1.5px solid #bdc3c7;
 }
 #emoji { 
     width: 25px;
@@ -223,7 +252,7 @@ html, body {
     background-color: #ffff ;
     border:0px;
     position: absolute;
-    left: 22.5%;
+    left: 16.5%;
     top: 2.5px;
 }
 #emoji:hover,
@@ -235,7 +264,7 @@ html, body {
     background-color: #ffff;
     border:0px;
     position: absolute;
-    left: 22.5%;
+    left: 16.5%;
     top: 2.5px;
 }
 
@@ -248,7 +277,7 @@ html, body {
     background-size: cover;
     background-color: #ffff;
     position: absolute;
-    left: 32.5%;
+    left: 24.5%;
     top: 0px;
 }
 #imageLable:hover,
@@ -260,7 +289,7 @@ html, body {
     background-color: #ffff;
     border:0px;
     position: absolute;
-    left: 32.5%;
+    left: 24.5%;
     top: 0px;
 }
 #sendImage{
@@ -278,7 +307,7 @@ html, body {
     background-image: url("content/music.png");
     background-size: cover;
     position: absolute;
-    left: 42.5%;
+    left: 32.5%;
     top: 0px;
 }
 .musicbox:hover,
@@ -290,7 +319,7 @@ html, body {
     background-color: #ffff;
     border:0px;
     position: absolute;
-    left: 42.5%;
+    left: 32.5%;
     top: 0px;
 }
 #music{
@@ -309,7 +338,7 @@ html, body {
     background-color: #ffff;
     border:0px;
     position: absolute;
-    left: 52.5%;
+    left: 40.5%;
     top: 0px;
 }
 #clearBtn:hover,
@@ -321,7 +350,7 @@ html, body {
     background-color: #ffff;
     border:0px;
     position: absolute;
-    left: 52.5%;
+    left: 40.5%;
     top: 0px;
 }
 #messageInput {
@@ -478,11 +507,7 @@ html, body {
     visibility: hidden;
 }
 .open .right-sidebar {
-  /*  animation-name: rightslide;
-    animation-duration: .5s;
-    animation-fill-mode: both;
-    animation-timing-function: ease-in-out;
-    animation-direction: alternate;*/
+
 }
 .open .left-sidebar {
     animation-name: leftslide;
@@ -491,7 +516,7 @@ html, body {
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
 }
-/*.open .right-sidebar li:nth-child(1),*/
+
 .open .left-sidebar li:nth-child(2) {
     animation-name: fadeIn;
     animation-duration: .3s;
@@ -499,7 +524,7 @@ html, body {
     animation-fill-mode: both;
     animation-timing-function: ease-in-out;
 }
-/*.open .right-sidebar li:nth-child(2),*/
+
 .open .left-sidebar li:nth-child(1) {
     animation-name: fadeIn;
     animation-duration: .3s;
@@ -507,18 +532,7 @@ html, body {
     animation-fill-mode: both;
     animation-timing-function: ease-in-out;
 }
-/*@keyframes rightslide {
-    from {
-        opacity: 0;
-        visibility: hidden;
-        transform: translate(-30%, 0);
-    }
-    to {
-        opacity: 1;
-        visibility: visible;
-        transform: translate(0, 0);
-    }
-}*/
+
 
 @keyframes leftslide {
     from {
@@ -538,6 +552,109 @@ html, body {
     }
     to {
         opacity: 1;
+    }
+}
+
+/*实时天气*/
+.weather-wrapper {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.body { 
+    margin:  20px 5px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    width: 270px;
+    height: 270px;
+    background-color: white;
+    box-shadow: 0px 0px 25px 1px rgba(50, 50, 50, 0.1);
+    animation: appear 500ms ease-out forwards; 
+}
+
+.madrid h1 {
+        position: absolute;
+        font-family: 'Lato', sans-serif;
+        font-weight:300;
+        font-size:80px;
+        color: #B8B8B8;
+        bottom: 35px;
+        left: 35px;
+        opacity: 0;
+        transform: translateX(150px);
+        animation: title-appear 500ms ease-out 500ms forwards;
+}
+.madrid p {
+        position: absolute;
+        font-family: 'Lato', sans-serif;
+        font-weight:300;
+        font-size:20px;
+        color: #B8B8B8; 
+        bottom: 0;
+        left: 37.5px;
+        animation: title-appear 1s ease-out 500ms forwards;
+}
+.weather-icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    float: right;
+    margin: 40px 40px 0 0;
+    animation: weather-icon-move 5s ease-in-out infinite;
+}
+
+.sun { 
+    background: #FFCD41; 
+    border-radius: 50%; 
+    box-shadow: rgba(255,255,0,0.1) 0 0 0 4px;
+    animation: light 800ms ease-in-out infinite alternate, weather-icon-move 5s ease-in-out infinite;
+}
+
+@keyframes light {
+    from {
+        box-shadow: rgba(255,255,0,0.2) 0 0 0 10px;
+    }
+    to {
+        box-shadow: rgba(255,255,0,0.2) 0 0 0 17px;
+    }
+}
+
+
+
+@keyframes weather-icon-move {
+    50% { 
+        transform: translateY(-8px); 
+    }
+}
+
+@keyframes appear {
+  0% {
+    transform:scale(0);
+  }
+  50% {
+    transform:scale(1.05)
+  }
+  75% {
+    transform:scale(0.95)
+  }
+  100% {
+   transform:scale(1)
+  }
+}
+
+@keyframes title-appear {
+    from {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
     }
 }
 
@@ -601,17 +718,6 @@ ul {
   background: url('../public/6.png') no-repeat 0px 0px;
 }
 
-.headPic li.pic7 span{
-  background: url('../public/7.png') no-repeat 0px 0px;
-}
-
-.headPic li.pic8 span{
-  background: url('../public/8.png') no-repeat 0px 0px;
-}
-
-.headPic li.pic9 span{
-  background: url('../public/9.png') no-repeat 0px 0px;
-}
 
 .chosePic li{
   float: left;
