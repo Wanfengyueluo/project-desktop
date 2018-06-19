@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%;">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -7,56 +7,173 @@
         <meta name="description" content="hichat | a simple chat application built with node.js and websocket">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>hichat</title>
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" type="text/css" href="button.css">
+        
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="bounceInRight.css">
+        
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+        <script src="script/jquery.js"></script>
+        <link rel="stylesheet" href="index.css">
+        <!-- <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+        <script src="script/bootstrap.min.js"></script>
+        <!-- Bootstrap CSS -->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+        <link  rel="stylesheet" href="styles/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> -->
+        <link  href="styles/canvas.css">
+        <script src="script/colorpalettepicker.js"></script>
+        <script type="text/javascript">
+        (function($){
+        $.fn.autoTextarea = function(options) {
+        var defaults={
+        maxHeight:null,//文本框是否自动撑高，默认：null，不自动撑高；如果自动撑高必须输入数值，该值作为文本框自动撑高的最大高度
+        minHeight:$(this).height() //默认最小高度，也就是文本框最初的高度，当内容高度小于这个高度的时候，文本以这个高度显示
+        };
+        var opts = $.extend({},defaults,options);
+        return $(this).each(function() {
+        $(this).bind("paste cut keydown keyup focus blur",function(){
+        var height,style=this.style;
+        this.style.height =  opts.minHeight + 'px';
+        if (this.scrollHeight > opts.minHeight) {
+        if (opts.maxHeight && this.scrollHeight > opts.maxHeight) {
+        height = opts.maxHeight;
+        style.overflowY = 'scroll';
+        } else {
+        height = this.scrollHeight;
+        style.overflowY = 'hidden';
+        }
+        style.height = height  + 'px';
+        }
+        });
+        });
+        };
+        })(jQuery);
+        </script>
+        
+        
     </head>
-    <body>
-        <div class="title">
-        <button class="flip"></button>
-    </div>
-        <div class="wrapper">
-            <div class="banner">
-                <h1>HiChat :)</h1>
-                <span id="status"></span>
-            </div>
-            <div id="historyMsg">
-            </div>
-            <div class="controls" >
-                <div class="items">
-                    <input id="colorStyle" type="color" placeHolder='#000' title="font color" />
-                    <input id="emoji" type="button" value="emoji" title="emoji" />
-                    <label for="sendImage" class="imageLable">
-                        <input type="button" value="image"  />
-                        <input id="sendImage" type="file" value="image"/>
-                    </label>
-                    <input id="clearBtn" type="button" value="clear" title="clear screen" />
+    <body style="height: 100%;font-size: 14px;">
+        <!-- 导航条 -->
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a  class="navbar-brand " href="#"  style="color: white;font-size: 22.5px;">ROOM-HNZU</a>
                 </div>
-                <textarea id="messageInput" placeHolder="enter to send"></textarea>
-                <input id="sendBtn" type="button" value="SEND">
-                <div id="emojiWrapper">
+                <div>
+                    <ul class="nav navbar-nav navbar-left">
+                        <li class="home" style="font-size: 18px;"><a href="#">HOME</a></li>
+                        <li style="font-size: 18px;"><a href="#">XXX</a></li>
+                        <li style="font-size: 18px;"><a href="#">XXX</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+        <!--聊天室部分 -->
+        <div class="container" style="width: 45%; height: 60%;">
+            <div class="row" style="height: 100%;">
+                <div class="banner col-md-12 col-sm-12 col-xs-12" style="padding: 0px;">
+                    <div id="logo">XXXXX :)</div>
+                    
+                </div>
+                <div class="clearfix  col-md-8 col-sm-8 col-xs-8" style=" padding:0px;">
+                    <div class="line col-md-12 col-sm-12 col-xs-12" style="padding: 0px;">
+                        <!--按钮部分 -->
+                        <div class="control-center">
+                            <div class="option-btn"></div>
+                            <ul class="left-sidebar">
+                                <li ></li>
+                                <li class="flip"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="historyMsg col-md-12 col-sm-12 col-xs-12" id="historyMsg" style="padding: 0px;">
+                        
+                    </div>
+                    <div class="controls col-md-12 col-sm-12 col-xs-12" style="padding: 0px;">
+                        <div class="items " >
+                            <!-- <input id="colorStyle" type="color" placeHolder='#' title="font color" /> -->
+                            <!-- <div id="colorpalettediv "></div> -->
+                            <input id="colorStyle" type="color" placeHolder='#' title="font color" />
+                            <input id="emoji" type="button"  title="emoji" />
+                            <div  class="imageLable" id="imageLable">
+                                <input id="sendImage" type="file" value="image" title="chose a picture" accept="image/png,image/jpeg,image/gif"  />
+                            </div>
+                            <div  class="musicbox">
+                                <input id="music" type="file" value="music" title="chose a music"/>
+                            </div>
+                            <input id="clearBtn" type="button" title="clear screen" />
+                        </div>
+                        <div class="send-line">
+                            <textarea id="messageInput" placeHolder="enter to send" class="chackTextarea-area" cols="55" rows="3"></textarea>
+                            <div class="sendcircle">
+                                <div class="send">
+                                    <input id="sendBtn" type="button" value="SEND" title="send message">
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div id="emojiWrapper"></div>
+                    </div>
+                </div>
+                <div class="right-grid col-md-4 col-sm-4 col-xs-4" >
+                    <div id="ctr-candle" style=" margin-top: 10px;">
+                        <!-- <div id="canvasPanel"></div>
+                        <div id="candle"></div> -->
+                    </div>
+                    <span id="status"></span><!-- 在线人数统计 -->
                 </div>
             </div>
         </div>
         <div id="loginWrapper">
             <div id="input-style" >
                 <div id="right" >
-                    <!-- <h1 id="info">connecting to server...</h1> -->
-                    <h1 >connecting to server...</h1>
-                    <div class="u-auto-format-text">
-                        <p>Sign up now to get great deals on <em>breath-taking</em> outdoor vactions.</p>
-                        <p>Morbi ac felis. Sed a libero. Praesent nec nisl a purus blandit viverra. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros.</p>
-                    </div>
+                    <ul class="headPic">
+          <li class="pic1"><span></span></li>
+          <li class="pic2"><span></span></li>
+          <li class="pic3"><span></span></li>
+          <br/>
+        </ul>
+        <ul class="chosePic">
+          <li class="chose1"></li>
+          <li class="chose2"></li>
+          <li class="chose3"></li>
+          <br/>
+        </ul>
+        <ul class="headPic">
+
+          <li class="pic4"><span></span></li>
+          <li class="pic5"><span></span></li>
+          <li class="pic6"><span></span></li>
+          <br/>
+
+        </ul>
+        <ul class="chosePic">
+          <li class="chose4"></li>
+          <li class="chose5"></li>
+          <li class="chose6"></li>
+          <br/>
+
+        </ul>
+
+                    
                 </div>
                 <div id="left" >
                     <!-- <div id="info">connecting to server...</div> -->
-                    <form id="sign-up" class="form form--sign-up">
-                        <label for="email" class="form__label">InPut A NickName</label>
-                        <input name="email" type="email" class="form__field" placeholder="jane@doe.com" id="nicknameInput">
+                    <form id="nickWrapper" class="form form--sign-up">
+                        <label for="nickname" class="form__label">Input A Nickname</label>
+                        <input  type="text" class="form__field" placeholder="就喜欢在沙发上睡瞌睡" id="nicknameInput">
                         
-                        <input name="submit" type="submit" id="loginBtn" value="Sign Up">
+                        <input  type="button" id="loginBtn" value="OK">
                     </form>
+                    <div id="info">connecting to server... </div>
                 </div>
             </div>
         </div>
@@ -67,9 +184,40 @@
                 <input type="button" value="OK" id="loginBtn" />
             </div>
         </div> -->
-        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script src="index.js"></script>
-        <script type="text/javascript" src="button.js"></script>
+        <!-- <script src="script/canvas.js"></script> -->
+        <script type="text/javascript">
+        $('#colorpalettediv').colorPalettePicker({
+        bootstrap: 3,
+        lines: 3,
+        onSelected: function (color) {
+        // alert(color);
+        }
+        });
+        //注意：调用代码一定是放textarea后面。
+        $(".chackTextarea-area").autoTextarea({
+        maxHeight:70,//文本框是否自动撑高，默认：null，不自动撑高；如果自动撑高必须输入数值，该值作为文本框自动撑高的最大高度
+        });
+        // 按钮
+        $(document).on('click', '.option-btn', function() {
+        $(this).toggleClass('open');
+        $('.control-center').toggleClass('open');
+        });
+        // 收缩到HOME
+        $(document).ready(function(){
+        $(".flip").click(function(){
+        $(".container").slideToggle("100");
+        
+        });
+        });
+
+        $(document).ready(function(){
+        $(".home").click(function(){
+        $(".container").slideToggle("10");
+        
+        });
+        });
+        </script>
     </body>
 </html>
